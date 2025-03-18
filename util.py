@@ -7,7 +7,7 @@ import pandas as pd
 def computeFeatureImportance(df_X, df_Y, model=None, scoring=None):
     if model is None:
         model = RandomForestClassifier(random_state=0)
-    print("Computer feature importance using", model)
+    print("Compute feature importance using", model)
     model.fit(df_X, df_Y.squeeze())
     result = permutation_importance(model, df_X, df_Y,
             n_repeats=10, random_state=0, scoring=scoring)
